@@ -1,22 +1,27 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'; // O ReactiveFormsModule si lo prefieres
+import { FormsModule } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-login',
   standalone: true,
-  imports: [CommonModule, FormsModule], // Importa los módulos aquí
+  imports: [CommonModule, FormsModule],
   templateUrl: './login.component.html',
   styleUrls: ['./login.component.css']
 })
+export class LoginComponent {
+  usuario = '';
+  contrasena = '';
+  mostrarError = false; 
 
-export class LoginComponent { 
-  usuario = ''; // Declara la variable usuario
-  contrasena = ''; // Declara la variable contrasena
+  constructor(private router: Router) { }
 
-onSubmit() {
-  // Aquí puedes agregar la lógica para manejar el envío del formulario
-  console.log('Usuario:', this.usuario);
-  console.log('Contraseña:', this.contrasena);
-}
+  onSubmit() {
+    if (this.usuario === 'D1992428' && this.contrasena === 'Moreno21') {
+      this.router.navigate(['/formulario']);
+    } else {
+      this.mostrarError = true; 
+    }
+  }
 }

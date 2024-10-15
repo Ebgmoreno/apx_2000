@@ -1,0 +1,118 @@
+<nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">APX 2000</a>
+      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      <div class="collapse navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link" (click)="limpiarFormulario()">Limpiar formulario</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" routerLink="/equipos">Equipos registrados</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" (click)="cerrarSesion()">Cerrar sesión</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  
+  <div class="container mt-5">
+    <h2>Formulario de Datos</h2>
+    <form (ngSubmit)="onSubmit()" #radioForm="ngForm">
+      <div class="mb-3">
+        <h3>Información del usuario que entrega</h3>
+        <div class="form-group">
+          <label for="grado">Grado:</label>
+          <input type="text" class="form-control" id="grado" name="grado" [(ngModel)]="radio.grado" required>
+        </div>
+        <div class="form-group">
+          <label for="nombreCompleto">Nombre Completo:</label>
+          <input type="text" class="form-control" id="nombreCompleto" name="nombreCompleto" [(ngModel)]="radio.nombreCompleto" required>
+        </div>
+        <div class="form-group">
+          <label for="unidad">Unidad:</label>
+          <input type="text" class="form-control" id="unidad" name="unidad" [(ngModel)]="radio.unidad" required>
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <h3>Detalles del equipo que se recepciona</h3>
+        <div class="form-group">
+          <label for="serie">Serie:</label>
+          <input type="text" class="form-control" id="serie" name="serie" [(ngModel)]="radio.serie" required>
+        </div>
+        <h4>Motivo (Selecciona todos los que apliquen):</h4>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="equipo" name="motivo" [(ngModel)]="radio.motivo.equipo">
+          <label class="form-check-label" for="equipo">Equipo</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="pantalla" name="motivo" [(ngModel)]="radio.motivo.pantalla">
+          <label class="form-check-label" for="pantalla">Pantalla</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="botones" name="motivo" [(ngModel)]="radio.motivo.botones">
+          <label class="form-check-label" for="botones">Botones</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="eliminador" name="motivo" [(ngModel)]="radio.motivo.eliminador">
+          <label class="form-check-label" for="eliminador">Eliminador</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="bateria" name="motivo" [(ngModel)]="radio.motivo.bateria">
+          <label class="form-check-label" for="bateria">Batería</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="antena" name="motivo" [(ngModel)]="radio.motivo.antena">
+          <label class="form-check-label" for="antena">Antena</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="cargador" name="motivo" [(ngModel)]="radio.motivo.cargador">
+          <label class="form-check-label" for="cargador">Cargador</label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="checkbox" id="perillas" name="motivo" [(ngModel)]="radio.motivo.perillas">
+          <label class="form-check-label" for="perillas">Perillas</label>
+        </div>
+        <div class="form-group">
+          <label for="descripcion">Descripción detallada:</label>
+          <textarea class="form-control" id="descripcion" name="descripcion" rows="3" [(ngModel)]="radio.descripcion"></textarea>
+        </div>
+        <div class="form-group">
+          <label for="fechaMinistracion">Fecha de Ministración:</label>
+          <input type="date" class="form-control" id="fechaMinistracion" name="fechaMinistracion" [(ngModel)]="radio.fechaMinistracion">
+        </div>
+      </div>
+  
+      <div class="mb-3">
+        <h3>Datos del usuario que recibe</h3>
+        <div class="form-group">
+          <label for="nombreRecibe">Nombre:</label>
+          <input type="text" class="form-control" id="nombreRecibe" name="nombreRecibe" [(ngModel)]="radio.nombreRecibe" required>
+        </div>
+        <div class="form-group">
+          <label for="fechaRecepcion">Fecha de Recepción:</label>
+          <input type="date" class="form-control" id="fechaRecepcion" name="fechaRecepcion" [(ngModel)]="radio.fechaRecepcion">
+        </div>
+        <h4>Prioridad:</h4>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="ordinario" name="prioridad" value="ordinario" [(ngModel)]="radio.prioridad" checked>
+          <label class="form-check-label" for="ordinario">Ordinario</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="urgente" name="prioridad" value="urgente" [(ngModel)]="radio.prioridad">
+          <label class="form-check-label" for="urgente">Urgente</label>
+        </div>
+        <div class="form-check">
+          <input class="form-check-input" type="radio" id="extraUrgente" name="prioridad" value="extraUrgente" [(ngModel)]="radio.prioridad">
+          <label class="form-check-label" for="extraUrgente">Extra-Urgente</label>
+        </div>
+      </div>
+  
+      <button type="submit" class="btn btn-primary" [disabled]="!radioForm.valid">Enviar</button>
+    </form>
+  </div>
