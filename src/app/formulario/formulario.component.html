@@ -10,7 +10,7 @@
             <a class="nav-link" (click)="limpiarFormulario()">Limpiar formulario</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link" routerLink="/equipos">Equipos registrados</a>
+            <a class="nav-link" (click)="test()">Equipos registrados</a> 
           </li>
           <li class="nav-item">
             <a class="nav-link" (click)="cerrarSesion()">Cerrar sesión</a>
@@ -45,39 +45,42 @@
           <label for="serie">Serie:</label>
           <input type="text" class="form-control" id="serie" name="serie" [(ngModel)]="radio.serie" required>
         </div>
+
         <h4>Motivo (Selecciona todos los que apliquen):</h4>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="equipo" name="motivo" [(ngModel)]="radio.motivo.equipo">
+          <input class="form-check-input" type="checkbox" id="equipo" name="equipo" [(ngModel)]="radio.motivo.equipo">
           <label class="form-check-label" for="equipo">Equipo</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="pantalla" name="motivo" [(ngModel)]="radio.motivo.pantalla">
+          <input class="form-check-input" type="checkbox" id="pantalla" name="pantalla" [(ngModel)]="radio.motivo.pantalla">
           <label class="form-check-label" for="pantalla">Pantalla</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="botones" name="motivo" [(ngModel)]="radio.motivo.botones">
+          <input class="form-check-input" type="checkbox" id="botones" name="botones" [(ngModel)]="radio.motivo.botones">
           <label class="form-check-label" for="botones">Botones</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="eliminador" name="motivo" [(ngModel)]="radio.motivo.eliminador">
+          <input class="form-check-input" type="checkbox" id="eliminador" name="eliminador" [(ngModel)]="radio.motivo.eliminador">
           <label class="form-check-label" for="eliminador">Eliminador</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="bateria" name="motivo" [(ngModel)]="radio.motivo.bateria">
+          <input class="form-check-input" type="checkbox" id="bateria" name="bateria" [(ngModel)]="radio.motivo.bateria">
           <label class="form-check-label" for="bateria">Batería</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="antena" name="motivo" [(ngModel)]="radio.motivo.antena">
+          <input class="form-check-input" type="checkbox" id="antena" name="antena" [(ngModel)]="radio.motivo.antena">
           <label class="form-check-label" for="antena">Antena</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="cargador" name="motivo" [(ngModel)]="radio.motivo.cargador">
+          <input class="form-check-input" type="checkbox" id="cargador" name="cargador" [(ngModel)]="radio.motivo.cargador">
           <label class="form-check-label" for="cargador">Cargador</label>
         </div>
         <div class="form-check form-check-inline">
-          <input class="form-check-input" type="checkbox" id="perillas" name="motivo" [(ngModel)]="radio.motivo.perillas">
+          <input class="form-check-input" type="checkbox" id="perillas" name="perillas" [(ngModel)]="radio.motivo.perillas">
           <label class="form-check-label" for="perillas">Perillas</label>
         </div>
+
+
         <div class="form-group">
           <label for="descripcion">Descripción detallada:</label>
           <textarea class="form-control" id="descripcion" name="descripcion" rows="3" [(ngModel)]="radio.descripcion"></textarea>

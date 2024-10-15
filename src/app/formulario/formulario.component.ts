@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { Router } from '@angular/router'; 
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-formulario',
@@ -33,7 +33,7 @@ export class FormularioComponent {
     prioridad: 'ordinario'
   };
 
-  constructor(private router: Router) { }
+  constructor(private router: Router) { } 
 
   limpiarFormulario() {
     this.radio = {
@@ -60,11 +60,14 @@ export class FormularioComponent {
   }
 
   cerrarSesion() {
-    // ... (lógica para cerrar sesión)
-    this.router.navigate(['/']);
+    this.router.navigate(['/']); 
   }
 
   onSubmit() {
-    // ... (lógica para enviar el formulario)
+   alert('Equipo registrado con éxito!');
   }
+  test() {
+    console.log("Se hizo clic en el enlace");
+  }
+
 }
